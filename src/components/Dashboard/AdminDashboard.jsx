@@ -2,6 +2,8 @@ import React from 'react'
 import Header from '../Utils/Header'
 
 const AdminDashboard = () => {
+  // const currUserData = JSON.parse(localStorage.getItem(currUserData));
+
   return (
     <div className='w-screen h-max md:h-screen bg-[#1C1C1C]  py-6 px-8'>
       <Header />
