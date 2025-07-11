@@ -7,7 +7,11 @@ import { AuthContext } from "./context/AuthProvider";
 
 const App = () => {
   const contextData = useContext(AuthContext);
-  const loggedInUser = localStorage.getItem("loggedInUser");
+  var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  if(!loggedInUser){
+    loggedInUser = {role: "anonymous", data: null};
+  }
 
   const [employeesData, setEmployeesData] = useState(null);
   const [adminData, setAdminData] = useState(null);
@@ -32,33 +36,44 @@ const App = () => {
     const employee = employeesData.find((e)=>email == e.email && password == e.password);
     const admin = adminData.find((e)=>email == e.email && password == e.password);
 
-    console.log("Employee: ",employee," Admin: ",admin);
-
     if (employee) {
-      localStorage.setItem("loggedInUser", "user");
+      loggedInUser.role = "user";
+      loggedInUser.data = employee;
+      localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+
+      // localStorage.setItem("loggedInUser", "user");
       // setCurrUserData(employee);
-      localStorage.setItem("currUserData", JSON.stringify(employee));
+      // localStorage.setItem("currUserData", JSON.stringify(employee));
       window.location.reload();
     } 
     else if (admin) {
-      localStorage.setItem("loggedInUser", "admin");
+      loggedInUser.role = "admin";
+      loggedInUser.data = admin;
+      localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+
+      // localStorage.setItem("loggedInUser", "admin");
       // setCurrUserData(admin);
-      localStorage.setItem("currUserData", JSON.stringify(admin));
+      // localStorage.setItem("currUserData", JSON.stringify(admin));
       window.location.reload();
     } 
     else {
-      localStorage.setItem("loggedInUser", "anonymous");
-      localStorage.setItem("currUserData", null);
+      loggedInUser.role = "anonymous";
+      loggedInUser.data = null;
+      localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+
+      // localStorage.setItem("loggedInUser", "anonymous");
+      // localStorage.setItem("currUserData", null);
+
       alert("Invalid Credentials");
     }
   };
 
   return (
     <>
-      {loggedInUser === "user" ? (
-        <EmployeeDashboard />
-      ) : loggedInUser === "admin" ? (
-        <AdminDashboard />
+      {loggedInUser.role === "user" ? (
+        <EmployeeDashboard currUser = {loggedInUser}/>
+      ) : loggedInUser.role === "admin" ? (
+        <AdminDashboard currUser = {loggedInUser}/>
       ) : (
         <Login handleLogin={handleLogin} />
       )}

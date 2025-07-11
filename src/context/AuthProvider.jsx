@@ -10,9 +10,10 @@ const AuthProvider = ({children}) => {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
+    setLocalStorage();
     const {employees, admin} = getLocalStorage();
     setUserData({employees, admin});
-  }, [])
+  }, [localStorage.getItem("employees")])
 
   return (
     <div>

@@ -1,14 +1,16 @@
 import React from "react";
 
-const logout = () => {
-  localStorage.setItem("loggedInUser", "anonymous");
-  localStorage.setItem("currUserData", null);
-  window.location.reload();
-};
+const Header = ({currUserData}) => {
+  const logout = () => {
+    const loggedInUser = {role: "anonymous", data: null};
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+    // localStorage.setItem("currUserData", null);
+    window.location.reload();
+  };
 
-const currUserData = JSON.parse(localStorage.getItem("currUserData"));
+  // const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  // const currUserData = loggedInUser.data;
 
-const Header = () => {
   return (
     <div className="w-full flex justify-between">
       <div>
