@@ -10,10 +10,13 @@ const AuthProvider = ({children}) => {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
+    console.log("Test-3");
     if(!localStorage.getItem("employees")){
+      console.log("Test-1");
       setLocalStorage();
     }
     if(!localStorage.getItem("loggedInUser")){
+      console.log("Test-2");
       const loggedInUser = {role: "anonymous", data: null};
       localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
     }
