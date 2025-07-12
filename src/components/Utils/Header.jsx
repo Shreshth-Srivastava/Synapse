@@ -5,12 +5,7 @@ const Header = ({currUserData, setUser}) => {
     const loggedInUser = {role: "anonymous", data: null};
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
     setUser("anonymous");
-    // localStorage.setItem("currUserData", null);
-    // window.location.reload();
   };
-
-  // const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-  // const currUserData = loggedInUser.data;
 
   return (
     <div className="w-full flex justify-between">

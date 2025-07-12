@@ -21,9 +21,9 @@ const AdminDashboard = ({ currUser, setUser, employees }) => {
       task_category: category,
     };
 
-    const employee = employees.find((e)=>e.firstName === assignTo);
+    const employee = employees.find((e) => e.firstName === assignTo);
 
-    if(!employee){
+    if (!employee) {
       alert("No Such Employee Exists!");
       return;
     }
@@ -35,15 +35,16 @@ const AdminDashboard = ({ currUser, setUser, employees }) => {
     alert("Task Sucessfully Assigned!");
   };
 
-  // const currUserData = JSON.parse(localStorage.getItem(currUserData));
-
   const currUserData = currUser.data;
 
   return (
-    <div className="w-full h-max md:min-h-screen bg-[#1C1C1C]  py-6 px-8">
+    <div className="w-full h-max md:min-h-screen bg-[#1C1C1C]  py-6 px-6 md:px-8">
       <Header currUserData={currUserData} setUser={setUser} />
       <br />
-      <form onSubmit={submitHandler} className="bg-[hsl(0,0%,20%)] w-full h-max p-6 rounded flex flex-col md:flex-row justify-center items-center gap-2 md:gap-20">
+      <form
+        onSubmit={submitHandler}
+        className="bg-[hsl(0,0%,20%)] w-full h-max p-6 rounded flex flex-col md:flex-row justify-center items-center gap-2 md:gap-20"
+      >
         <div className="w-full h-full flex flex-col gap-4">
           <div>
             <h3>Task Title</h3>
@@ -144,14 +145,6 @@ const AdminDashboard = ({ currUser, setUser, employees }) => {
               );
             })
           : ""}
-        {/* <div className='w-full py-4 px-6 bg-amber-800 rounded text-center flex align-center justify-between'>
-          <p>EmployeeID</p>
-          <p>Name</p>
-          <p>New Tasks</p>
-          <p>Active Tasks</p>
-          <p>Completed Tasks</p>
-          <p>Failed Tasks</p>
-        </div> */}
       </div>
     </div>
   );

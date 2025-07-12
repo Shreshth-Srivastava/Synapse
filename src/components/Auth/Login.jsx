@@ -17,18 +17,18 @@ const Login = ({handleLogin}) => {
   return (
     <div className='w-screen h-screen flex justify-center items-center'>
       <form 
-      className='min-w-1/3 min-h-2/3 flex flex-col p-16 justify-start items-center gap-8 rounded-4xl border-2 border-zinc-400' 
+      className='min-w-1/4 min-h-2/3 flex flex-col p-12 justify-start items-center gap-8 rounded-xl border-2 border-zinc-400' 
       onSubmit={(e)=>{
         submitHandler(e)
       }}
       >
-        <h1 className='font-bold text-4xl mb-16'>Login</h1>
+        <h1 className='font-bold text-4xl my-10'>Login</h1>
         <input 
         required
         value={email} 
         type="email" 
         placeholder='Enter Email' 
-        className='bg-white text-black text-xl w-full p-2 text-center rounded-sm' 
+        className='bg-[hsl(0,0%,20%)] text-xl w-full p-2 text-center rounded-sm' 
         onChange={(e)=>{
           setEmail(e.target.value)
         }}
@@ -38,12 +38,12 @@ const Login = ({handleLogin}) => {
         value={password}
         type="password" 
         placeholder='Enter Password' 
-        className='bg-white text-black text-xl w-full p-2 text-center rounded-sm' 
+        className='bg-[hsl(0,0%,20%)] text-xl w-full p-2 text-center rounded-sm' 
         onChange={(e)=>{
           setPassword(e.target.value)
         }}
         />
-        <button type="submit" className='bg-gray-200 hover:bg-gray-400 text-black w-full py-2 rounded-sm cursor-pointer'>Submit</button>
+        <button type="submit" className='bg-gray-200 hover:bg-[hsl(0,0%,70%)] text-black w-full py-2 rounded-sm cursor-pointer'>Submit</button>
       </form>
     </div>
   )

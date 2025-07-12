@@ -12,13 +12,6 @@ const App = () => {
   const [employeesData, setEmployeesData] = useState(null);
   const [adminData, setAdminData] = useState(null);
 
-  // useEffect(() => {
-  //   setLocalStorage();
-  //   getLocalStorage();
-  // })
-
-  // const [user, setUser] = useState(null);
-
   useEffect(() => {
     if(contextData){
       setEmployeesData(contextData.employees);
@@ -26,7 +19,6 @@ const App = () => {
     }
   }, [contextData]);
 
-  // const [currUserData, setCurrUserData] = useState(null)
 
   const [user, setUser] = useState(loggedInUser.role);
 
@@ -39,32 +31,18 @@ const App = () => {
       loggedInUser.data = employee;
       localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
       setUser("user")
-
-      // localStorage.setItem("loggedInUser", "user");
-      // setCurrUserData(employee);
-      // localStorage.setItem("currUserData", JSON.stringify(employee));
-      // window.location.reload();
     } 
     else if (admin) {
       loggedInUser.role = "admin";
       loggedInUser.data = admin;
       localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
       setUser("admin")
-
-      // localStorage.setItem("loggedInUser", "admin");
-      // setCurrUserData(admin);
-      // localStorage.setItem("currUserData", JSON.stringify(admin));
-      // window.location.reload();
     } 
     else {
       loggedInUser.role = "anonymous";
       loggedInUser.data = null;
       localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
       setUser("anonymous")
-
-      // localStorage.setItem("loggedInUser", "anonymous");
-      // localStorage.setItem("currUserData", null);
-
       alert("Invalid Credentials");
     }
   };
