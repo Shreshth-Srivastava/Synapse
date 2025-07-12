@@ -22,40 +22,61 @@ const TaskList = ({tasks}) => {
     }
   });
 
-  console.log(newTasks)
-
   return (
     <div id='TaskListContainer' className='w-full h-1/2 flex flex-col md:flex-row flex-nowrap items-center justify-start gap-4 overflow-x-auto py-4'>
-      {
-        newTasks.map((e, idx) => {
+      {newTasks.map((e, idx) => {
           return(
-            <div key={idx} className='w-full md:w-1/4 h-full bg-rose-800 rounded-lg p-6 flex shrink-0 flex-col justify-start items-start gap-2'>
+            <div key={idx} className='w-full md:w-1/4 h-full bg-blue-800 rounded-lg p-6 flex shrink-0 flex-col justify-start items-start gap-2'>
               <div className='w-full flex items-center justify-between'>
-                <h3 className='bg-red-500 py-2 px-4 rounded-sm'>High</h3>
+                <h3 className='bg-white text-black py-2 px-4 rounded-sm'>{e.task_category}</h3>
                 <h3>{e.task_date}</h3>
               </div>
-              <h1 className='pt-4 text-3xl font-semibold'>Work-1</h1>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, consequatur in eos autem necessitatibus maxime!</p>
+              <h1 className='pt-4 text-3xl font-semibold'>{e.task_title}</h1>
+              <p>{e.task_description}</p>
             </div>
           )
         })
       }
       
-      {tasks.map((e, idx)=>{
-        
-        if(e.completed){
+      {activeTasks.map((e, idx)=>{
+        return(
+          <div key={idx} className='w-full md:w-1/4 h-full bg-yellow-800 rounded-lg p-6 flex shrink-0 flex-col justify-start items-start gap-2'>
+            <div className='w-full flex items-center justify-between'>
+              <h3 className='bg-white text-black py-2 px-4 rounded-sm'>{e.task_category}</h3>
+              <h3>{e.task_date}</h3>
+            </div>
+            <h1 className='pt-4 text-3xl font-semibold'>{e.task_title}</h1>
+            <p>{e.task_description}</p>
+          </div>
+        )
+      })}
+
+      {completedTasks.map((e, idx) => {
           return(
-            <div key={idx} className='w-full md:w-1/4 h-full bg-yellow-800 rounded-lg p-6 flex shrink-0 flex-col justify-start items-start gap-2'>
+            <div key={idx} className='w-full md:w-1/4 h-full bg-green-800 rounded-lg p-6 flex shrink-0 flex-col justify-start items-start gap-2'>
               <div className='w-full flex items-center justify-between'>
-                <h3 className='bg-red-500 py-2 px-4 rounded-sm'>High</h3>
-                <h3>8 July 2025</h3>
+                <h3 className='bg-white text-black py-2 px-4 rounded-sm'>{e.task_category}</h3>
+                <h3>{e.task_date}</h3>
               </div>
-              <h1 className='pt-4 text-3xl font-semibold'>Work-1</h1>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, consequatur in eos autem necessitatibus maxime!</p>
+              <h1 className='pt-4 text-3xl font-semibold'>{e.task_title}</h1>
+              <p>{e.task_description}</p>
             </div>
           )
-        }
-      })}
+        })}
+
+      {failedTasks.map((e, idx) => {
+          return(
+            <div key={idx} className='w-full md:w-1/4 h-full bg-red-800 rounded-lg p-6 flex shrink-0 flex-col justify-start items-start gap-2'>
+              <div className='w-full flex items-center justify-between'>
+                <h3 className='bg-white text-black py-2 px-4 rounded-sm'>{e.task_category}</h3>
+                <h3>{e.task_date}</h3>
+              </div>
+              <h1 className='pt-4 text-3xl font-semibold'>{e.task_title}</h1>
+              <p>{e.task_description}</p>
+            </div>
+          )
+        })
+      }
     </div>
     
   )

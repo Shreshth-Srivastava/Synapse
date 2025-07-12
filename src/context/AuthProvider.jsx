@@ -11,6 +11,8 @@ const AuthProvider = ({children}) => {
 
   useEffect(() => {
     setLocalStorage();
+    const loggedInUser = {role: "anonymous", data: null};
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
     const {employees, admin} = getLocalStorage();
     setUserData({employees, admin});
   }, [localStorage.getItem("employees")])

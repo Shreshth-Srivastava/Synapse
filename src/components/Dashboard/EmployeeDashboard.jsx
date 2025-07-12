@@ -18,10 +18,10 @@ const EmployeeDashboard = ({currUser, setUser}) => {
       <Header currUserData={currUserData} setUser={setUser}/>
       <br />
       <div className=' w-full h-1/3 grid grid-row-2 md:grid-row-1 grid-cols-2 md:grid-cols-4 gap-4 py-4'>
-        <MetricCard digit={currUserData.TaskCount.newTasks} desc='New Tasks' bgcolor='bg-red-400'/>
-        <MetricCard digit={currUserData.TaskCount.completedTasks} desc='Completed Tasks' bgcolor='bg-yellow-400'/>
-        <MetricCard digit={currUserData.TaskCount.acceptedTasks} desc='Accepted Tasks' bgcolor='bg-blue-400'/>
-        <MetricCard digit={currUserData.TaskCount.failedTasks} desc='Failed Tasks' bgcolor='bg-green-400'/>
+        <MetricCard digit={currUserData.TaskCount.newTasks} desc='New Tasks' bgcolor='bg-blue-800'/>
+        <MetricCard digit={currUserData.TaskCount.acceptedTasks} desc='Accepted Tasks' bgcolor='bg-yellow-800'/>
+        <MetricCard digit={currUserData.TaskCount.completedTasks} desc='Completed Tasks' bgcolor='bg-green-800'/>
+        <MetricCard digit={currUserData.TaskCount.failedTasks} desc='Failed Tasks' bgcolor='bg-red-800'/>
       </div>
       <TaskList tasks={currUserData.tasks}/>
     </div>
