@@ -9,6 +9,10 @@ const App = () => {
   const contextData = useContext(AuthContext);
   var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
+  if(!loggedInUser){
+    loggedInUser = {role: "anonymous", data: null};
+  }
+
   const [employeesData, setEmployeesData] = useState(null);
   const [adminData, setAdminData] = useState(null);
 
