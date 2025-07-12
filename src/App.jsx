@@ -32,6 +32,8 @@ const App = () => {
 
   // const [currUserData, setCurrUserData] = useState(null)
 
+  const [user, setUser] = useState(loggedInUser.role);
+
   const handleLogin = (email, password) => {
     const employee = employeesData.find((e)=>email == e.email && password == e.password);
     const admin = adminData.find((e)=>email == e.email && password == e.password);
@@ -40,26 +42,29 @@ const App = () => {
       loggedInUser.role = "user";
       loggedInUser.data = employee;
       localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+      setUser("user")
 
       // localStorage.setItem("loggedInUser", "user");
       // setCurrUserData(employee);
       // localStorage.setItem("currUserData", JSON.stringify(employee));
-      window.location.reload();
+      // window.location.reload();
     } 
     else if (admin) {
       loggedInUser.role = "admin";
       loggedInUser.data = admin;
       localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+      setUser("admin")
 
       // localStorage.setItem("loggedInUser", "admin");
       // setCurrUserData(admin);
       // localStorage.setItem("currUserData", JSON.stringify(admin));
-      window.location.reload();
+      // window.location.reload();
     } 
     else {
       loggedInUser.role = "anonymous";
       loggedInUser.data = null;
       localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+      setUser("anonymous")
 
       // localStorage.setItem("loggedInUser", "anonymous");
       // localStorage.setItem("currUserData", null);
@@ -70,10 +75,10 @@ const App = () => {
 
   return (
     <>
-      {loggedInUser.role === "user" ? (
-        <EmployeeDashboard currUser = {loggedInUser}/>
-      ) : loggedInUser.role === "admin" ? (
-        <AdminDashboard currUser = {loggedInUser}/>
+      {user === "user" ? (
+        <EmployeeDashboard currUser = {loggedInUser} setUser={setUser}/>
+      ) : user === "admin" ? (
+        <AdminDashboard currUser = {loggedInUser} setUser={setUser}/>
       ) : (
         <Login handleLogin={handleLogin} />
       )}

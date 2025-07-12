@@ -1,11 +1,12 @@
 import React from "react";
 
-const Header = ({currUserData}) => {
+const Header = ({currUserData, setUser}) => {
   const logout = () => {
     const loggedInUser = {role: "anonymous", data: null};
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+    setUser("anonymous");
     // localStorage.setItem("currUserData", null);
-    window.location.reload();
+    // window.location.reload();
   };
 
   // const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
