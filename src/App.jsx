@@ -9,9 +9,9 @@ const App = () => {
   const contextData = useContext(AuthContext);
   var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  if(!loggedInUser){
-    loggedInUser = {role: "anonymous", data: null};
-  }
+  // if(!loggedInUser){
+  //   loggedInUser = {role: "anonymous", data: null};
+  // }
 
   const [employeesData, setEmployeesData] = useState(null);
   const [adminData, setAdminData] = useState(null);
@@ -24,7 +24,7 @@ const App = () => {
   }, [contextData]);
 
 
-  const [user, setUser] = useState(loggedInUser.role);
+  const [user, setUser] = useState(loggedInUser ? loggedInUser.role : null);
 
   const handleLogin = (email, password) => {
     const employee = employeesData.find((e)=>email == e.email && password == e.password);
