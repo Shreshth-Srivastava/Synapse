@@ -1,9 +1,9 @@
 const employees = [
   {
     id: 1,
-    email: "a@a.com",
+    email: "shreshth@srivastava.com",
     password: "123",
-    firstName: "Arjun",
+    firstName: "Shreshth",
     tasks: [
       {
         active: true,
