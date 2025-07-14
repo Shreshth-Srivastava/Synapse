@@ -77,7 +77,7 @@ const Login = ({handleLogin, data}) => {
       </div>
 
       <form 
-      className='min-w-1/4 min-h-max md:min-h-1/3 flex flex-col p-12 justify-start items-center gap-8 rounded-xl border-2 border-zinc-400' 
+      className='min-w-1/4 min-h-max md:min-h-1/3 bg-[hsl(0,0%,5%)] flex flex-col p-12 justify-start items-center gap-8 rounded-xl border-2 border-[hsl(0,0%,20%)]' 
       onSubmit={(e)=>{
         submitHandler(e)
       }}
