@@ -45,12 +45,12 @@ const TaskList = ({id, tasks, setUserData}) => {
     var employees = JSON.parse(localStorage.getItem("employees"));
     var employee = employees.find((e)=>e.id = id)
 
-    employee.TaskCount.activeTasks -= 1;
+    employee.TaskCount.acceptedTasks -= 1;
     employee.TaskCount.completedTasks += 1;
     employee.tasks = tasks;
 
     var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-    loggedInUser.data.TaskCount.activeTasks -= 1;
+    loggedInUser.data.TaskCount.acceptedTasks -= 1;
     loggedInUser.data.TaskCount.completedTasks += 1;
     loggedInUser.data.tasks = tasks;
     
@@ -67,12 +67,12 @@ const TaskList = ({id, tasks, setUserData}) => {
     var employees = JSON.parse(localStorage.getItem("employees"));
     var employee = employees.find((e)=>e.id = id)
 
-    employee.TaskCount.activeTasks -= 1;
+    employee.TaskCount.acceptedTasks -= 1;
     employee.TaskCount.failedTasks += 1;
     employee.tasks = tasks;
 
     var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-    loggedInUser.data.TaskCount.activeTasks -= 1;
+    loggedInUser.data.TaskCount.acceptedTasks -= 1;
     loggedInUser.data.TaskCount.failedTasks += 1;
     loggedInUser.data.tasks = tasks;
 
