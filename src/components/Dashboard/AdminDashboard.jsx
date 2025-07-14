@@ -116,7 +116,7 @@ const AdminDashboard = ({ currUser, setUser, employees }) => {
 
       {/* Employees Data */}
 
-      <div className="w-full py-4 px-6 bg-[hsl(0,0%,20%)] rounded grid grid-cols-6">
+      <div className="w-full text-sm md:text-base py-4 px-2 md:px-6 bg-[hsl(0,0%,20%)] rounded grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr] md:grid-cols-6 gap-4 md:gap-0">
         <p>ID</p>
         <p>Name</p>
         <p>New Tasks</p>
@@ -133,7 +133,7 @@ const AdminDashboard = ({ currUser, setUser, employees }) => {
               return (
                 <div
                   key={idx}
-                  className="w-full py-4 px-6 border-2 border-[hsl(0,0%,20%)] rounded grid grid-cols-6 text-lg"
+                  className="w-full py-4 px-2 md:px-6 border-2 border-[hsl(0,0%,20%)] rounded grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr] md:grid-cols-6 gap-4 md:gap-0 text-lg"
                 >
                   <p>{e.id}</p>
                   <p>{e.firstName}</p>

@@ -5,7 +5,6 @@ import TaskList from "../TaskList/TaskList"
 
 const EmployeeDashboard = ({currUser, setUser}) => {
 
-  // const currUserData = currUser.data;
   const [currUserData, setCurrUserData] = useState(currUser.data);
   
   return (
