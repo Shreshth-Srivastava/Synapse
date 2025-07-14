@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Header from "../Utils/Header";
 
-const AdminDashboard = ({ currUser, setUser, employees }) => {
+const AdminDashboard = ({currUser, setUser}) => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [assignTo, setAssignTo] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
+
+  const employees = JSON.parse(localStorage.getItem("employees"));
 
   const submitHandler = (e) => {
     e.preventDefault();

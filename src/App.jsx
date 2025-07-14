@@ -56,7 +56,7 @@ const App = () => {
       {user === "user" ? (
         <EmployeeDashboard currUser = {loggedInUser} setUser={setUser}/>
       ) : user === "admin" ? (
-        <AdminDashboard currUser = {loggedInUser} setUser={setUser} employees={employeesData}/>
+        <AdminDashboard currUser = {loggedInUser} setUser={setUser}/>
       ) : (
         <Login handleLogin={handleLogin} data={contextData}/>
       )}
