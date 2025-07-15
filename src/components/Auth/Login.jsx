@@ -31,7 +31,7 @@ const Login = ({handleLogin, data}) => {
           <h1 className='text-xl'>Employees Credentials</h1>
           <div>
           <br />
-          <div className='w-full grid grid-cols-[1fr_4fr_1fr] gap-4 md:text-lg'>
+          <div className='w-full grid grid-cols-[1fr_4fr_1fr] gap-4 lg:text-lg'>
             <p>Name</p>
             <p>Email</p>
             <p>Password</p>
@@ -41,7 +41,7 @@ const Login = ({handleLogin, data}) => {
           {employees ?
             employees.map((e, idx)=>{
               return(
-                <div key={idx} className='w-full grid grid-cols-[1fr_4fr_1fr] gap-4 text-xs md:text-base'>
+                <div key={idx} className='w-full grid grid-cols-[1fr_4fr_1fr] gap-4 text-xs lg:text-base'>
                   <p>{e.firstName}</p>
                   <p>{e.email}</p>
                   <p>{e.password}</p>
@@ -55,7 +55,7 @@ const Login = ({handleLogin, data}) => {
           <h1 className='text-xl'>Admin Credentials</h1>
           <div>
           <br />
-          <div className='w-full grid grid-cols-[1fr_4fr_1fr] gap-4 md:text-lg'>
+          <div className='w-full grid grid-cols-[1fr_4fr_1fr] gap-4 lg:text-lg'>
             <p>Name</p>
             <p>Email</p>
             <p>Password</p>
@@ -65,7 +65,7 @@ const Login = ({handleLogin, data}) => {
           {employees ?
             admin.map((e, idx)=>{
               return(
-                <div key={idx} className='w-full grid grid-cols-[1fr_4fr_1fr] gap-4 text-xs md:text-base'>
+                <div key={idx} className='w-full grid grid-cols-[1fr_4fr_1fr] gap-4 text-xs lg:text-base'>
                   <p>{e.firstName}</p>
                   <p>{e.email}</p>
                   <p>{e.password}</p>

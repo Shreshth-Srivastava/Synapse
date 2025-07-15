@@ -35,6 +35,7 @@ const AdminDashboard = ({currUser, setUser}) => {
 
     localStorage.setItem("employees", JSON.stringify(employees));
     alert("Task Sucessfully Assigned!");
+    window.location.reload();
   };
 
   const currUserData = currUser.data;
