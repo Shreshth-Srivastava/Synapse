@@ -1,2 +1,2 @@
-# Employee Management System Using ReactJS
+# Synapse - An Employee Management System Using ReactJS
 ## by Shreshth Srivastava
