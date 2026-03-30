@@ -9,19 +9,16 @@ A full-featured **Employee Management System** built with React.js — featuring
 
 ## 📋 Table of Contents
 
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Screenshots](#screenshots)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- About the Project
+- Features
+- Tech Stack
+- Getting Started
+  - Prerequisites
+  - Installation
+- Usage
+- Project Structure
+- Screenshots
+- License
 
 ---
 
@@ -104,13 +101,6 @@ npm start
 - Log in with employee credentials to access the **Employee Dashboard**
 - View assigned tasks, update task status, and track your workload
 
-<!-- > **Default Credentials**
->
-> | Role | Email | Password |
-> |---|---|---|
-> | Admin | `[admin@example.com]` | `[admin123]` |
-> | Employee | `[employee@example.com]` | `[emp123]` | -->
-
 > **Default Credentials**
 > Sample login credentials are available on the landing page of the app.
 
@@ -150,8 +140,6 @@ synapse/
 ---
 
 ## 📸 Screenshots
-
-> _Add screenshots of your app here_
 
 | Admin Dashboard | Employee Dashboard |
 |---|---|---|
