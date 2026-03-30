@@ -108,7 +108,7 @@ const Login = ({handleLogin, data}) => {
         </form>
 
       </div>
-      <a className='p-2 bg-blue-600 rounded hover:bg-blue-700' target='/' href="https://www.fiverr.com/s/EgNLPwd">Click here to hire me on a freelance basis</a>
+      {/* <a className='p-2 bg-blue-600 rounded hover:bg-blue-700' target='/' href="https://www.fiverr.com/s/EgNLPwd">Click here to hire me on a freelance basis</a> */}
     </div>
   )
 }

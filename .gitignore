@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Others
+EMS-1.png
+EMS-2.png
+EMS-3.png
