@@ -141,7 +141,7 @@ synapse/
 
 ## 📸 Screenshots
 
-| Admin Dashboard | Employee Dashboard |
+| Login Page | Admin Dashboard | Employee Dashboard |
 |---|---|---|
 | ![Login Page](EMS-1.png) | ![Admin Dashboard](EMS-3.png) | ![Employee Dashboard](EMS-2.png) |
 
